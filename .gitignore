@@ -1,0 +1,10 @@
+## Java Archive ##
+*.jar
+*.class
+
+## Eclipse Project ##
+*.classpath
+*.prefs
+*.xml
+*.project
+*.launch

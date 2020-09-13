@@ -1,0 +1,7 @@
+name: AutoWB
+version: 1.0
+main: xyz.adhdev.autowb.Main
+description: Automatic Disable WorlBorder When There's Online Players
+api-version: 1.15
+author: MrAdhit
+depend: [WorldBorder]
