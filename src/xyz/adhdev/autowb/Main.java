@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
@@ -55,7 +57,27 @@ public class Main extends JavaPlugin implements Listener {
 	}
 	
 	public void Logs(String message) {
-		console.sendMessage(ChatColor.GREEN+"[AutoWB]"+ChatColor.WHITE+" "+message);
+		console.sendMessage(ChatColor.GREEN+"[AutoWB] "+ChatColor.WHITE+" "+message);
+	}
+	
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if(command.getName().equalsIgnoreCase("awb")) {
+			if(args.length > 0) {
+				if(args[0].equalsIgnoreCase("player")){
+					int playernum = Integer.parseInt(args[1]);
+					if(playernum == (int)playernum) {
+						config.set("Minimum Player", playernum);
+						sender.sendMessage(ChatColor.GREEN+"[AutoWB] "+ChatColor.WHITE+"Minimum Player Changed To "+playernum);
+						saveConfig();
+						this.getConfig();
+					}else {
+						sender.sendMessage(ChatColor.RED+"ERROR "+ChatColor.WHITE+": Invalid number");
+					}
+					
+				}
+			}
+		}
+		return false;
 	}
 	
 	public void wbstart() {

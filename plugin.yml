@@ -1,7 +1,11 @@
 name: AutoWB
-version: 1.0
+version: 1.1
 main: xyz.adhdev.autowb.Main
 description: Automatic Disable WorlBorder When There's Online Players
 api-version: 1.15
 author: MrAdhit
 depend: [WorldBorder]
+commands:
+   awb:
+      description: Change minimum player while in game
+      permission: awb.set
